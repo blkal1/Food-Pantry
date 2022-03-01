@@ -10,6 +10,7 @@ GET_ALL_PANTRY_BY_NAME = "SELECT * FROM Food_Pantry_Manager WHERE product_name =
 
 GET_ALL_PANTRY_BY_DATE = "SELECT * FROM Food_Pantry_Manager WHERE expiration_date = ?;"
 
+#Find best rating 
 # GET_FAV_FOOD = """ 
 # SELECT * FROM Food_Pantry_Manager
 # WHERE house_rating = (SELECT MAX(house_rating)) 
@@ -48,8 +49,8 @@ def get_all_pantry_by_expiration_date(connection, expiration_date):
         return connection.execute(GET_ALL_PANTRY_BY_DATE, (expiration_date,)).fetchall()
 
 
-def get_fav_food(connection, house_rating):
-    with connection:
-        return connection.execute(GET_FAV_FOOD, (house_rating,)).fetchone()
+# def get_fav_food(connection, house_rating):
+#     with connection:
+#         return connection.execute(GET_FAV_FOOD, (house_rating,)).fetchone()
 
 

@@ -10,8 +10,7 @@ Please Choose one of these options:
 2) See all my products
 3) Find a product by name
 4) Find a product by expiration date
-5) See which is the home fav item
-6) Exit Process
+5) Exit Process
 
 What is your selection?: """
 
@@ -20,7 +19,7 @@ def menu():
     connection = database_pantry.connect()
     database_pantry.create_tables(connection)
 
-    while (user_input := input(MENU_PROMPT)) != "6":
+    while (user_input := input(MENU_PROMPT)) != "5":
         if user_input == "1":
             product_name = input("Enter the name of the household product: ")
             quantity_number = int(input("Enter the number of household product: "))
